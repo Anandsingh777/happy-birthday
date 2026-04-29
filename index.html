@@ -731,15 +731,9 @@ function initBtn(){
 }
 
 function evade(ix,iy){
-  const cx=bx+bw/2, cy=by+bh/2;
-  const dx=cx-ix, dy=cy-iy;
-  const dist=Math.sqrt(dx*dx+dy*dy)||1;
-  const flee=220+Math.random()*160;
-  let tx=bx+(dx/dist)*flee+(Math.random()-.5)*130;
-  let ty=by+(dy/dist)*flee+(Math.random()-.5)*130;
   const pad=22;
-  btx=Math.max(pad,Math.min(W-bw-pad,tx));
-  bty=Math.max(pad,Math.min(H-bh-pad,ty));
+  btx = Math.random() * (W - bw - 2 * pad) + pad;
+  bty = Math.random() * (H - bh - 2 * pad) + pad;
 }
 
 function trackCursor(x,y){
